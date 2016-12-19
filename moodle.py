@@ -16,7 +16,7 @@ conf.read(os.path.join(project_dir, 'config.ini'))
 root_directory = conf.get("dirs", "root_dir")
 username = conf.get("auth", "username")
 password = conf.get("auth", "password")
-authentication_url = conf.get("auth", "url")
+authentication_url = conf.get("auth", "url").strip('\'"')
 
 # Store the cookies and create an opener that will hold them
 cj = cookielib.CookieJar()
